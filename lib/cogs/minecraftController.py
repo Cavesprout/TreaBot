@@ -22,12 +22,12 @@ class MinecraftController(Cog):
     @command()
     async def launchServer(self, ctx):
         await ctx.send(f'Attempting to launch server.')
-        subprocess.run([r'start.bat'])
+        p = subprocess.Popen([r'start.bat'])
 
     @command()
     async def killServer(self, ctx):
         await ctx.send(f'Attempting to kill server.')
-        os.kill(pid, 5592)
+        p.terminate()
 
 
 def setup(bot):
