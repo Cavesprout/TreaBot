@@ -32,6 +32,13 @@ class Bot(BotBase):
 
         super().__init__(command_prefix=PREFIX, owner_ids=OWNER_IDS)
 
+    def setup(self):
+        for cog in COGS:
+            self.load_extension(f"lib.cogs.{cog}")
+            print(f" {cog} cog root deployed")
+
+        print("all cog roots deployed")
+
     def run(self, version, version_message):
         self.VERSION = version
         self.VERSION_MESSAGE = version_message
