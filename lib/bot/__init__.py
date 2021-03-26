@@ -32,8 +32,9 @@ class Bot(BotBase):
 
         super().__init__(command_prefix=PREFIX, owner_ids=OWNER_IDS)
 
-    def run(self, version):
+    def run(self, version, version_message):
         self.VERSION = version
+        self.VERSION_MESSAGE = version_message
         
         with open(".lib/bot/token", "r", encoding="utf-8") as tf:
             self.TOKEN = tf.read()
