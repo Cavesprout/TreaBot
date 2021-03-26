@@ -4,6 +4,8 @@ from discord.ext.commands import Cog
 from discord.ext.commands import command
 from discord.ext import commands
 
+import subprocess
+
 class MinecraftController(Cog):
     def __init__(self, bot):
         self.bot = bot

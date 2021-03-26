@@ -8,7 +8,6 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from glob import glob
 
 import os
-import subprocess
 
 bot_dir=r"C:\Users\Admin\Desktop\ModServer"
 assert os.path.isdir(bot_dir)
