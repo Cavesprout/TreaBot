@@ -16,7 +16,7 @@ class MinecraftController(Cog):
             self.bot.cogs_ready.ready_up("minecraftController")
 
     @command()
-    async def launchServer(ctx):
+    async def launchServer(self, ctx):
         await ctx.send(f'Attempting to launch server.')
         subprocess.run([r'start.bat'])
 
