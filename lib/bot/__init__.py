@@ -36,7 +36,7 @@ class Bot(BotBase):
         self.VERSION = version
         self.VERSION_MESSAGE = version_message
         
-        with open(".lib/bot/token.0", "r", encoding="utf-8") as tf:
+        with open("lib/bot/token.0", "r", encoding="utf-8") as tf:
             self.TOKEN = tf.read()
 
         print("running bot...")
