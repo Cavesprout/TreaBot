@@ -9,7 +9,7 @@ from glob import glob
 
 PREFIX = "$"
 OWNER_IDS = [482592062546378753]
-COGS = [path.split("\\")[-1][:-3] for path in glob("./lib/cogs/*.py")]
+COGS = [path.split("\\")[-1][:-3] for path in glob("TreaBot/lib/cogs/*.py")]
 
 class Ready(object):
     def __init__(self):
