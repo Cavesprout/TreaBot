@@ -66,6 +66,7 @@ class Bot(BotBase):
             print("bot ready")
 
     async def on_message(self, message):
-        pass
+        if not message.author.bot:
+            await self.process_commands(message)
 
 bot = Bot()
