@@ -7,16 +7,16 @@ from asyncio import sleep
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from glob import glob
 
-PREFIX = "$"
-OWNER_IDS = [482592062546378753]
-COGS = [path.split("\\")[-1][:-3] for path in glob("TreaBot/lib/cogs/*.py")]
-
 import os
 import subprocess
 
 bot_dir=r"C:\Users\Admin\Desktop\ModServer"
 assert os.path.isdir(bot_dir)
 os.chdir(bot_dir)
+
+PREFIX = "$"
+OWNER_IDS = [482592062546378753]
+COGS = [path.split("\\")[-1][:-3] for path in glob("TreaBot/lib/cogs/*.py")]
 
 class Ready(object):
     def __init__(self):
