@@ -4,13 +4,6 @@ from discord.ext.commands import Cog
 from discord.ext.commands import command
 from discord.ext import commands
 
-import os
-import subprocess
-
-bot_dir=r"C:\Users\Admin\Desktop\ModServer"
-assert os.path.isdir(bot_dir)
-os.chdir(bot_dir)
-
 class MinecraftController(Cog):
     def __init__(self, bot):
         self.bot = bot
