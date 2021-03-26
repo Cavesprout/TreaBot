@@ -16,8 +16,9 @@ class MinecraftController(Cog):
             self.bot.cogs_ready.ready_up("minecraftController")
 
     @command()
-    async def ping(self, ctx):
-        await ctx.send(f'Pong! ({round(self.bot.latency * 1000)} ms)')
+    async def launchServer(ctx):
+        await ctx.send(f'Attempting to launch server.')
+        subprocess.run([r'start.bat'])
 
 
 def setup(bot):
