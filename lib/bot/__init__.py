@@ -50,6 +50,8 @@ class Bot(BotBase):
 
     async def on_ready(self):
         if not self.ready:
+            self.stdout = self.get_channel(825038173981376513)
+
             self.ready = True
             print("bot ready")
 
