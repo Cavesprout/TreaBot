@@ -6,6 +6,7 @@ from discord.ext import commands
 
 import os
 import subprocess
+import psutil
 
 class MinecraftController(Cog):
     def __init__(self, bot):
@@ -19,16 +20,15 @@ class MinecraftController(Cog):
         if not self.bot.ready:
             self.bot.cogs_ready.ready_up("minecraftController")
 
-    @command()
+    @command(aliases=['launch', 'launchserver'])
     async def launchServer(self, ctx):
         await ctx.send(f'Attempting to launch server.')
-        p = subprocess.Popen([r'start.bat'])
+        self.p = subprocess.Popen([r'start.bat'], shell=True)
 
     @command()
     async def killServer(self, ctx):
         await ctx.send(f'Attempting to kill server.')
-        p.terminate()
-
+        await ctx.send(f'This command is currently broken')
 
 def setup(bot):
     bot.add_cog(MinecraftController(bot))
