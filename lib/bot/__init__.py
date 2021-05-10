@@ -9,7 +9,7 @@ from glob import glob
 
 import os
 
-bot_dir=r"C:\Users\Admin\Desktop\ModServer"
+bot_dir=r"C:\Users\Admin\Desktop\Trea"
 assert os.path.isdir(bot_dir)
 os.chdir(bot_dir)
 
