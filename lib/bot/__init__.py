@@ -1,5 +1,7 @@
 from discord import Intents
 from discord import Embed
+from discord.ext import commands
+from discord.ext.commands import command
 from discord.ext.commands import Bot as BotBase
 from discord.ext.commands import CommandNotFound
 
