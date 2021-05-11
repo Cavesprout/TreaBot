@@ -5,6 +5,7 @@ from discord.ext.commands import command
 from discord.ext import commands
 
 from glob import glob
+import os
 
 COGS = [path.split("\\")[-1][:-3] for path in glob("TreaBot/lib/cogs/*.py")]
 
@@ -38,6 +39,11 @@ class BasicCog(Cog):
             print(f" {cog} cog root reloaded")
 
         print("all cog roots reloaded")
+        await ctx.send(f'All cogs have been reloaded.')
+
+    @command()
+    async def basiccogdir(self, ctx):
+        await ctx.send(f'{os.getcwd()}')
 
 
 def setup(bot):

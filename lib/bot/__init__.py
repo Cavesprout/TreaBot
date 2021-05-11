@@ -11,9 +11,11 @@ from glob import glob
 
 import os
 
+
 bot_dir=r"C:\Users\Admin\Desktop\Trea"
 assert os.path.isdir(bot_dir)
 os.chdir(bot_dir)
+print(f'Bot running in {os.getcwd()}')
 
 PREFIX = "$"
 OWNER_IDS = [482592062546378753]
