@@ -27,14 +27,6 @@ class BasicCog(Cog):
     @command()
     async def reloadcogs(self, ctx):
         for cog in COGS:
-            self.reload_extension(f"lib.cogs.{cog}")
-            print(f" {cog} cog root reloaded")
-
-        print("all cog roots reloaded")
-
-    @command()
-    async def reloadcogs(self, ctx):
-        for cog in COGS:
             self.bot.reload_extension(f"lib.cogs.{cog}")
             print(f" {cog} cog root reloaded")
 
@@ -42,7 +34,7 @@ class BasicCog(Cog):
         await ctx.send(f'All cogs have been reloaded.')
 
     @command()
-    async def basiccogdir(self, ctx):
+    async def botdir(self, ctx):
         await ctx.send(f'{os.getcwd()}')
 
 
