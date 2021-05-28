@@ -35,7 +35,7 @@ class MinecraftController(Cog):
             assert os.path.isdir(server_dir)
             env = dict(os.environ)
             env['JAVA_OPTS'] = 'foo'
-            self.activeServer = subprocess.Popen(['java', '-server', '-Xmx6G', '-Xms6G', '-jar', f'{server}-launch.jar'], env=env, cwd=server_dir)
+            self.activeServer = subprocess.Popen(['java', '-server', '-Xmx12G', '-Xms12G', '-jar', f'{server}-launch.jar'], env=env, cwd=server_dir)
             self.activeServerName = server
 
     @command(aliases=['kill'])
