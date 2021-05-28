@@ -1,3 +1,4 @@
+from types import SimpleNamespace
 from discord import Intents
 from discord import Embed
 from discord.ext import commands
@@ -10,6 +11,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from glob import glob
 
 import os
+import json
 
 
 bot_dir=r"C:\Users\Admin\Desktop\Trea"
@@ -20,6 +22,11 @@ print(f'Bot running in {os.getcwd()}')
 PREFIX = "$"
 OWNER_IDS = [482592062546378753]
 COGS = [path.split("\\")[-1][:-3] for path in glob("TreaBot/lib/cogs/*.py")]
+
+# Load Bot Secrets
+botsecrets_path = "TreaBot/BotSecrets.json"
+with open(botsecrets_path, 'r') as bs:
+    botsecrets = json.loads(bs.read())
 
 class Ready(object):
     def __init__(self):
@@ -55,9 +62,8 @@ class Bot(BotBase):
 
         print("running setup...")
         self.setup()
-        
-        with open("TreaBot/lib/bot/token.0", "r", encoding="utf-8") as tf:
-            self.TOKEN = tf.read()
+
+        self.TOKEN = botsecrets["BotToken"]
 
         print("running bot...")
         super().run(self.TOKEN)

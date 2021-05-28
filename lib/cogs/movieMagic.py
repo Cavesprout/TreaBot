@@ -4,7 +4,7 @@ from discord.ext.commands import Cog
 from discord.ext.commands import command
 from discord.ext import commands
 
-class BasicCog(Cog):
+class MovieMagic(Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -27,9 +27,8 @@ class BasicCog(Cog):
         await ctx.send(embed=embed)
 
     async def findMoviePoster(message):
-        search = google_images_download.googleimagesdownload()
-        arguments = {"keywords":message,"limit":1,}
+        pass
 
 
 def setup(bot):
-    bot.add_cog(BasicCog(bot))
+    bot.add_cog(MovieMagic(bot))

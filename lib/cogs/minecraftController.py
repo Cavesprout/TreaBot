@@ -58,7 +58,7 @@ class MinecraftController(Cog):
                 path = f"MinecraftServers\{d}\serverinfo.txt"
                 print(f'Accessing {path}')
                 f = open(path)
-                # Do something with the file
+                # List the directories found
                 await ctx.send(f'{d} directory accessed.')
             except IOError:
                 print("File not accessible")

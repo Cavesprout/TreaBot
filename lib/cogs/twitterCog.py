@@ -11,10 +11,10 @@ class BasicCog(Cog):
 
     @Cog.listener()
     async def on_ready(self):
-        await self.bot.stdout.send("Basic Functions Online")
-        print("Basic Functions Online")
+        await self.bot.stdout.send("Flagrant Narcissism Online")
+        print("Flagrant Narcissism Online")
         if not self.bot.ready:
-            self.bot.cogs_ready.ready_up("basicCog")
+            self.bot.cogs_ready.ready_up("twitterCog")
 
     @command()
     async def twitping(self, ctx):
