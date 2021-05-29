@@ -5,7 +5,7 @@ from discord.ext.commands import command
 from discord.ext import commands
 
 
-class BasicCog(Cog):
+class TwitCog(Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -22,4 +22,4 @@ class BasicCog(Cog):
 
 
 def setup(bot):
-    bot.add_cog(BasicCog(bot))
+    bot.add_cog(TwitCog(bot))

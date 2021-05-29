@@ -46,6 +46,7 @@ class Bot(BotBase):
         self.ready = False
         self.cogs_ready = Ready()
         self.scheduler = AsyncIOScheduler
+        self.botsecrets = botsecrets
 
         super().__init__(command_prefix=PREFIX, owner_ids=OWNER_IDS)
 
@@ -63,7 +64,7 @@ class Bot(BotBase):
         print("running setup...")
         self.setup()
 
-        self.TOKEN = botsecrets["BotToken"]
+        self.TOKEN = self.botsecrets["BotToken"]
 
         print("running bot...")
         super().run(self.TOKEN)
