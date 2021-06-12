@@ -12,6 +12,7 @@ from lib.bot import botsecrets
 class MovieMagic(Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.ltResponse = None
 
     @Cog.listener()
     async def on_ready(self):
@@ -23,7 +24,7 @@ class MovieMagic(Cog):
     @command(aliases=['movielookup', 'lookup'])
     async def movieLookup(self, ctx, *, message):
         url = botsecrets["IMDBURL"]
-        querystring = {"q":"ant"}
+        querystring = {"q":f"{message}"}
         headers= {
             'x-rapidapi-key': botsecrets["x-rapidapi-key"],
             'x-rapid-host': botsecrets["x-rapidapi-host"]
@@ -34,12 +35,10 @@ class MovieMagic(Cog):
                     await ctx.send(f"Error Code: {response.status}")
                     return
                 print(response.text)
+                print(response._body)
+                
+                self.ltResponse = response
 
-        # async with aiohttp.request("GET", url, headers=headers, params=querystring) as response:
-        #     if (response.status != 200):
-        #         await ctx.send(f"Error Code: {response.status}")
-        #         return
-        #     print(response.text)
             
 
 
