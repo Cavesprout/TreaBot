@@ -1,8 +1,6 @@
-CREATE TABLE IF NOT EXISTS users {
+CREATE TABLE IF NOT EXISTS userXP (
     UserID Integer PRIMARY KEY,
-    PermID Integer DEFAULT 0
-}
-
-CREATE TABLE IF NOT EXISTS designated_channels {
-    ServerID Integer PRIMARY KEY,
-}
+    PermID Integer DEFAULT 0,
+    XP Integer DEFAULT 0,
+    XPRateLimit text DEFAULT CURRENT_TIMESTAMP
+)

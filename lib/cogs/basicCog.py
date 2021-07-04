@@ -37,6 +37,10 @@ class BasicCog(Cog):
     async def botdir(self, ctx):
         await ctx.send(f'{os.getcwd()}')
 
+    @command()
+    async def getchannelid(self, ctx):
+        await ctx.send(f'{ctx.channelid}')
+
 
 def setup(bot):
     bot.add_cog(BasicCog(bot))

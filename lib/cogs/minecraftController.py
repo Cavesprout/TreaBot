@@ -45,8 +45,10 @@ class MinecraftController(Cog):
             self.activeServer.terminate()
             self.activeServer = None
             self.activeServerName = None
+            print(f"Server has been shut down.")
+            await ctx.send(f'Server has been successfully shut down.')
         else:
-            await ctx.send(f'There is no server running')
+            await ctx.send(f'There is no server running.')
 
     @command(aliases=['list', 'listservers'])
     async def listServers(self, ctx):
