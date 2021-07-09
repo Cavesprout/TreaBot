@@ -11,6 +11,7 @@ import random
 class LeafGames(Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.broketext = "You don't have enough leaves for that, you broke bitch."
 
     @Cog.listener()
     async def on_ready(self):
@@ -64,7 +65,7 @@ class LeafGames(Cog):
             db.execute("UPDATE userXP SET XP = XP + ? WHERE UserID = 69", -delta)
 
         else:
-            await ctx.send("You don't have enough leaves for that, you broke bitch.")
+            await ctx.send(self.broketext)
 
     @command(aliases=['flip', 'lf'])
     async def leafflip(self, ctx, bet, wager):
@@ -100,7 +101,7 @@ class LeafGames(Cog):
             else:
                 await ctx.send("You have to guess either h or t")
         else:
-            await ctx.send("You don't have enough leaves for that, you broke bitch.")
+            await ctx.send(self.broketext)
 
     @command(aliases=['hb'])
     async def housebank(self,ctx):
@@ -118,7 +119,7 @@ class LeafGames(Cog):
             db.execute("UPDATE userXP SET XP = XP + ? WHERE UserID = ?", amount, target.id)
             await ctx.send(f"Successfuly given {amount} leaves to {target.name}")
         else:
-            await ctx.send("You don't have enough leaves for that, you broke bitch.")
+            await ctx.send(self.broketext)
         
 
 def setup(bot):
