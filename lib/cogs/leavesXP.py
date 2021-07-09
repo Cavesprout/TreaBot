@@ -30,7 +30,7 @@ class LeavesXP(Cog):
         xp_to_add = randint(1, 4)
 
         db.execute("UPDATE userXP SET XP = XP + ?, XPRateLimit = ? WHERE UserID = ?", xp_to_add, datetime.utcnow().isoformat(), message.author.id)
-        print(f'added {xp_to_add} xp to {message.author}')
+        
         self.numMessages += 1
 
         if self.numMessages > 10:
