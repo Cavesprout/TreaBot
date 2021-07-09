@@ -65,7 +65,7 @@ class LeafGames(Cog):
             db.execute("UPDATE userXP SET XP = XP + ? WHERE UserID = 69", -delta)
 
         else:
-            await ctx.send()
+            await ctx.send(self.broketext)
 
     @command(aliases=['flip', 'lf'])
     async def leafflip(self, ctx, bet, wager):
