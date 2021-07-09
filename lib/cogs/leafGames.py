@@ -74,7 +74,7 @@ class LeafGames(Cog):
         if (numleaves[0] > int(bet)):
             if wager == "h" or wager == "t":
 
-                numChoice = random.randint(0,1)
+                numChoice = random.randint(0, 1)
                 if (numChoice == 0):
                     if (wager == "h"):
                         await ctx.send(f"The leaf landed on heads! You doubled your bet to {int(bet)*2}!")
@@ -95,21 +95,15 @@ class LeafGames(Cog):
                 else:
                     delta = -int(bet)
 
+                # Add xp to user's balance
                 db.execute("UPDATE userXP SET XP = XP + ? WHERE UserID = ?", delta, ctx.author.id)
+                # Subtract xp from house balance
                 db.execute("UPDATE userXP SET XP = XP + ? WHERE UserID = 69", -delta)
 
             else:
                 await ctx.send("You have to guess either h or t")
         else:
             await ctx.send(self.broketext)
-
-    @command(aliases=['hb'])
-    async def housebank(self,ctx):
-        numleaves = db.record("SELECT XP FROM userXP WHERE UserID = 69")
-        if (numleaves[0] >= 0):
-            await ctx.send(f"Lol I've won {numleaves[0]} leaves from you scrubs")
-        else:
-            await ctx.send(f"Y'all have won {-numleaves[0]} leaves from me :c")
 
     @command()
     async def giveleaf(self, ctx, target: discord.Member, amount):
