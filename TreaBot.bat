@@ -1,5 +1,5 @@
 @echo off
-title TreeBot
+title TreaBot
 echo Activating Venv
 venv\Scripts\activate
 echo Sprouting Trea
